@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>见证奇迹的时刻</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #666;
+    text-align: center;
+}
+
+form {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]{
+    margin-left:17px;
+    margin-right:10px;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #00bbff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#result1, #result2, #result3 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#change1, #change2, #change3, #change4, #change5, #change6, #change7, #luck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#change1 div, #change2 div, #change3 div, #change4 div, #change5 div, #change6 div, #change7 div, #luck div {
+    width: 50px;
+    height: 50px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px;
+    background: url('data:image/svg+xml;utf8,<svg fill="rgba(0, 0, 0, 0.5)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9l-7 7-7-7"></path></svg>') no-repeat right 10px center;
+    background-size: 16px;
+}
+
+    </style>
+</head>
+<body>
+    <h1>欢迎你一起来见证奇迹</h1>
+    <p>这里有四张扑克牌，对折撕成8张后，按顺序叠放，牌面如下</p>
+    <p>A1 B1 C1 D1 A2 B2 C2 D2</p>
+    
+    <form id="cardForm">
+        第一步，你的名字将决定牌的移动次数：<br><br>
+        
+        <div id="nameContainer">
+            你的名字有几个字，则将依次移动几张牌到末尾  
+            <input type="text" id="name" placeholder="请输入你的名字">
+            <button id="submitButton" onclick="magicstart()">确定</button>
+        </div>
+        <div id="result1"></div>
+        <div id="change1"></div><br><br>
+        第二步，前三张牌将随机插入到其他牌中间：
+        <button id="submitButton2" onclick="magicstart2()">确定</button><br>
+        <div id="change2"></div><br><br>
+        第三步，取出第一张牌：<button id="submitButton3" onclick="magicstart3()">确定</button><br><br>
+        幸运牌1：<div id="change3"></div>
+        剩下的牌：<div id="change4"></div><br><br>
+        第四步，你的家乡将决定插入中间的牌数：<br><br>
+        将前面的牌插入到中间任意位置，南方代表插一张，北方代表前两张，如果你不清楚自己属于南方还是北方，插入三张<br><br>
+        <select id="direction">
+            <option value="1">南方</option>
+            <option value="2">北方</option>
+            <option value="3">我也不知道</option>
+        </select><br>
+        <div id="result2"></div>
+        <div id="change5"></div><br><br>
+        第五步，你的性别将决定牌的剩余张数：<br><br>
+        性别为男移除第一张，性别为女移除前两张<br><br>
+        <select id="gender">
+            <option value="1">男</option>
+            <option value="2">女</option>
+        </select><br>
+        <div id="result3"></div>
+        <div id="change6"></div><br><br>
+        第六步，将前面的牌依次移动7次到末尾:
+        <button id="submitButton4" onclick="magicstart6()">确定</button><br><br>
+        <div id="change7"></div><br><br>
+        第七步，将第一张牌放到最后，移除第二张牌，直到只剩一张<br><br>
+        见证奇迹的时刻！你将找到你的另一张幸运牌：
+        <button id="submitButton5" onclick="magicstart7()">确定</button><br><br>
+        <div id="luck"></div><br>
+
+    </form>
+
+    <script>
+        var a = ['A1', 'B1', 'C1', 'D1', 'A2', 'B2', 'C2', 'D2'];
+
+        var shuffledArray;
+        var insertedArray;
+        var card1;
+        var remaincard;
+        var insertedArray2;
+        var removedArray;
+        var shuffledArray2;
+
+
+        document.getElementById('submitButton').addEventListener('click', function(event) {
+            event.preventDefault(); // 阻止默认提交行为
+            magicstart();// 调用函数显示结果
+        });
+        document.getElementById('submitButton2').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            magicstart2();
+        });
+        document.getElementById('submitButton3').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            magicstart3(); 
+        });
+        document.getElementById('direction').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            magicstart4(); 
+        });
+        document.getElementById('gender').addEventListener('click', function(event) {
+            event.preventDefault();
+            magicstart5(); 
+        });
+        document.getElementById('submitButton4').addEventListener('click', function(event) {
+            event.preventDefault();
+            magicstart6(); 
+        });
+        document.getElementById('submitButton5').addEventListener('click', function(event) {
+            event.preventDefault(); 
+            magicstart7(); 
+        });
+
+        //第一步，按名字字数移动牌
+        function magicstart(){
+            const name = document.getElementById("name").value.length;
+            const result1 = '你的名字有' + name + '个字，所以前' + name + '张牌将依次移动到最后面';
+            document.getElementById("result1").innerText = result1;
+           
+            shuffledArray = shuffle(a, name);
+            const change1 = document.getElementById("change1");
+            change1.innerHTML = ''; // 清空原有内容
+            shuffledArray.forEach(card => {
+                const cardElement = document.createElement('div');
+                cardElement.textContent = card;
+                change1.appendChild(cardElement);
+            });
+        }
+
+        //第二步，将前三张牌插入中间任意位置
+        function magicstart2(){
+            const shuffledArrayCopy = shuffledArray.slice();
+            insertedArray = insertChange(shuffledArrayCopy,3);
+
+            const change2 = document.getElementById("change2");
+            change2.innerHTML = '';
+            insertedArray.forEach(card => {
+                const cardElement2 = document.createElement('div');
+                cardElement2.textContent = card;
+                change2.appendChild(cardElement2);
+            });
+        }
+
+        //第三步，取出第一张牌
+        function magicstart3(){
+            const insertedArrayCopy = insertedArray.slice();
+            card1 = insertedArrayCopy.shift();
+            remaincard = insertedArrayCopy.slice(0,8);
+
+            const change3 = document.getElementById("change3");
+            change3.innerHTML = '';
+            const cardElement3 = document.createElement('div');
+            cardElement3.textContent = card1;
+            change3.appendChild(cardElement3);
+
+            const change4 = document.getElementById("change4");
+            change4.innerHTML = '';
+            remaincard.forEach(card => {
+                const cardElement4 = document.createElement('div');
+                cardElement4.textContent = card;
+                change4.appendChild(cardElement4);
+            });
+        }
+
+        //第四步，按家乡地区插入牌
+        function magicstart4(){
+            const direction = document.getElementById("direction").value;
+            const result2 = '你将插入前'+direction+'张牌到中间位置';
+            document.getElementById("result2").innerText = result2;
+
+            const remaincardCopy = remaincard.slice();
+            insertedArray2 = insertChange(remaincardCopy,direction);
+
+            const change5 = document.getElementById("change5");
+            change5.innerHTML = '';
+            insertedArray2.forEach(card => {
+                const cardElement5 = document.createElement('div');
+                cardElement5.textContent = card;
+                change5.appendChild(cardElement5);
+            });
+        }
+
+        //第五步，按性别移动牌
+        function magicstart5(){
+            const gender = document.getElementById("gender").value;
+            const result3 = '你将移除开头的'+gender+'张牌';
+            document.getElementById("result3").innerText = result3;
+           
+            const insertedArray2Copy = insertedArray2.slice();
+            removedArray = insertedArray2Copy.splice(gender,7);
+            const change6 = document. getElementById("change6");
+            change6.innerHTML = ''; 
+            removedArray.forEach(card => {
+                const cardElement6 = document.createElement('div');
+                cardElement6.textContent = card;
+                change6.appendChild(cardElement6);
+            });
+        }
+
+        //第六步，移动7次牌
+        function magicstart6(){
+            const removedArrayCopy = removedArray.slice();
+            shuffledArray2 = shuffle(removedArrayCopy,7);
+            const change7 = document. getElementById("change7");
+            change7.innerHTML = ''; 
+            shuffledArray2.forEach(card => {
+                const cardElement7 = document.createElement('div');
+                cardElement7.textContent = card;
+                change7.appendChild(cardElement7);
+            });
+        }
+
+        //第七步，好运留下来烦恼都丢掉
+        function magicstart7(){
+            while (shuffledArray2.length>1){
+                const luck = shuffledArray2.shift();//取出第一张牌
+                shuffledArray2.push(luck);//将第一张牌放到最后
+                const sadness = shuffledArray2.shift();//移除第二张牌
+            }
+            const goodluck = shuffledArray2[0];
+            const luckElement = document.getElementById("luck");
+            luckElement.innerHTML = ''; 
+            const cardElement8 = document.createElement('div');
+            cardElement8.textContent = goodluck;
+            luckElement.appendChild(cardElement8);
+        
+        }
+
+
+        
+        //将第一张牌移动到序列末尾，重复n次
+        function shuffle(arr, n) {
+            const arr1 = arr.slice()
+            for (let i = 0; i < n; i++) {
+            const nums = arr1.shift()
+            arr1.push(nums)
+            }
+            return arr1;
+        }
+        
+        
+        function randomNum(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        //将前n张牌插入到中间任意位置
+        function insertChange(arr,count) {            
+            const nums = arr.splice(0,count); //从数组中取出元素
+            const indexes = []; //创建一个数组用于存放随机插入的位置
+            //生成介于1到数组长度之间的随机整数
+            while (indexes.length < count) {
+                let index = randomNum(1, arr.length - 1);
+                indexes.push(index);
+                }
+            //创建新数组用于存放插入结果
+            const arr2 = [...arr];
+            //将前n位元素分别插入到数组的随机位置
+            indexes.forEach((index, i) => {
+                arr2.splice(index+i, 0, nums[i]);
+            });
+            return arr2;
+        }
+
+        
+    </script>
+</body>
+</html>
