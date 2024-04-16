@@ -1,43 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>My first styled page</title>
-  <link rel="stylesheet" href="mystyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Life</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/dmego-home-page@latest/assets/css/vno.css">
+    <script type="text/javascript" src="https://unpkg.com/dmego-home-page@latest/assets/js/main.js"></script>
+    <style>
+        .panel-cover {
+            background-image: url('img/map.webp'); 
+            background-color: #f1f1f1; 
+            background-size: contain;
+        }
+    </style>
 </head>
 
 <body>
-
-<!-- Site navigation menu -->
-<ul class="navbar">
-  <li><a href="index.html">Home page</a>
-  <li><a href="musings.html">Musings</a>
-  <li><a href="town.html">My town</a>
-  <li><a href="links.html">Links</a>
-</ul>
-
-<!-- Main content -->
-<h1 style="
-border-style: solid; 
-border-width: 7px; 
-border-color: black;  
-padding: 20px;
-text-align: center; 
-background-color: cadetblue; 
-color: white;">My first styled page</h1>
-<!-- 内联（html某元素内）>内部（html head<style>）>外部（单独的css文件） -->
-
-<p>Welcome to my styled page!
-
-<p>It lacks images, but at least it has style.
-And it has links, even if they don't go
-anywhere&hellip;
-
-<p>There should be more here, but I don't know
-what yet.
-
-<!-- Sign and date the page, it's only polite! -->
-<address>Made 5 April 2004<br>
-  by myself.</address>
+    <header id="panel" class="panel-cover">
+        <div class="panel-main">
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content">
+                    <div class="ih-item circle effect right_to_left">            
+                        <a href="#" title="" class="blog-button">
+                            <div class="img"><img src="./img/profile.jpg" alt="img" class="js-avatar iUp profilepic"></div>
+                            <div class="info iUp">
+                                <div class="info-back">
+                                    <h2>Pursuing</h2>
+                                    <p>2024 · 追寻</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <br><br><br>
+                    <h1 class="panel-cover__subtitle panel-subtitle iUp">Always Enjoy Life</h1>
+                    <div class="navigation-wrapper iUp">
+                        <nav class="cover-navigation cover-navigation--primary">
+                            <ul class="navigation">
+                                <li class="navigation__item">
+                                    <a href="map.html" class="blog-button">开启</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-cover--overlay cover-slate"></div>
+        </div>
+    </header>
 
 </body>
 </html>
