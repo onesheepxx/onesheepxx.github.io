@@ -126,7 +126,10 @@
             </div>        
         </div>
     </div>
-
+    <!-- 返回 -->
+    <a href="map.html#domestic" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
     <!-- 尾页 -->
     <footer>
         <div class="container-fluid">
@@ -161,7 +164,27 @@
             </div>
         </div>
     </footer>
+    <script>
+        // 获取返回顶部按钮元素
+        const backToTopBtn = document.querySelector('.back-to-top');
 
+        // 监听窗口滚动事件
+        window.addEventListener('scroll', () => {
+        // 如果向下滚动超过 200 像素,显示按钮
+        if (window.pageYOffset > 200) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+        });
 
+        // 点击按钮时平滑滚动回顶部
+        backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+        });
+    </script>
 </body>
 </html>

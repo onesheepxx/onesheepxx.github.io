@@ -34,7 +34,7 @@
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#domestic">境内游</a>
                         <a class="dropdown-item" href="#abroad_easy">容易版境外游</a>
-                        <a class="dropdown-item" href="#abroad_hard">不易版境外游</a>
+                        <a class="dropdown-item" href="#abroad_hard">困难版境外游</a>
                       </div>
                     </li>
                 </ul>
@@ -42,23 +42,23 @@
     <!-- 地图 -->
     <div class="container-fluid">
         <div class="map">
-            <iframe src="https://uploads.knightlab.com/storymapjs/a2707682e98d7409b723def7ed300163/life/draft.html" frameborder="0" width="100%" height="800"></iframe>
+            <iframe src="https://uploads.knightlab.com/storymapjs/a2707682e98d7409b723def7ed300163/life/draft.html" frameborder="0" width="100%" height="844"></iframe>
         </div>
     </div>
     <!-- 关于我 -->
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-12">
-                <h1 class="display-4">关于我</h1>
+                <h1 class="display-4">未来计划</h1>
             </div>
             <div class="col-12">
                 <p class="lead">“环游世界”是我从小的梦想，一个这么多年都没变的梦想，为此我也确实一直在路上。
-                    <br>关于我的介绍，这里主要有我的足迹和未来计划，希望这些未来计划之后能在我的足迹里出现。</p>
+                    <br>关于我的网页，除了上面的地图足迹，还有下面的未来计划，最希望的事或许便是这些未来计划之后能在我的足迹里出现吧。</p>
             </div>
         </div>
     </div>
     <!-- 三个未来计划 -->
-    <div class="container-fluid">
+    <div id="future" class="container-fluid">
         <div class="row text-center">
             <div class="col-xs-12 col-sm-6 col-md-4">
                 <img src="img/火车.png" alt="境内游">
@@ -215,5 +215,23 @@
             </div>
         </div>
     </footer>
+    <script>
+        // 获取导航链接
+        const navLinks = document.querySelectorAll('.navbar-nav a');
+
+        // 为每个导航链接添加点击事件监听
+        navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // 阻止默认链接行为
+
+            // 获取链接指向的ID
+            const targetId = event.target.getAttribute('href');
+            // 使用scrollIntoView()方法平滑滚动到目标位置
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    </script>
 </body>
 </html>

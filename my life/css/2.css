@@ -29,7 +29,26 @@ html, body{
     font-size: 20px;
     color: #d5d5d5;
 }
-
+.back-to-top {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #007bff;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    z-index: 100;
+  }
+  
+  .back-to-top:hover {
+    background-color: #0056b3;
+    color: #fff;
+    text-decoration: none;
+  }
 
 footer{
     background-color: #3f3f3f;
