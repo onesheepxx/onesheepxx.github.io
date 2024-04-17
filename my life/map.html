@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tracks</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="css/1.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">首页 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">足迹</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        未来计划
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">境内游</a>
+                        <a class="dropdown-item" href="#">容易实现的境外游</a>
+                        <a class="dropdown-item" href="#">不易实现的境外游</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">联系</a>
+                    </li>
+                </ul>
+    </nav>
+    <!-- 地图 -->
+    <div class="container-fluid">
+        <div class="map">
+            <iframe src="https://uploads.knightlab.com/storymapjs/a2707682e98d7409b723def7ed300163/life/draft.html" frameborder="0" width="100%" height="800"></iframe>
+        </div>
+    </div>
+    <!-- 关于我 -->
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-12">
+                <h1 class="display-4">关于我</h1>
+            </div>
+            <div class="col-12">
+                <p class="lead">我是要使地图显示在导航栏之下而不是紧贴在导般上方，您可以通过添加一些样式来调整页面布局。具体步骤如下：在您的 HTML 文件中，为导航栏添加一个类名，比如 "navbar-fixed-top"，以便后续样式调整。</p>
+            </div>
+        </div>
+    </div>
+    <!-- 三个未来计划 -->
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <i class="fas fa-code"></i>
+                <h3>境内游</h3>
+                <p>背上包就出发！</p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <i class="fas fa-blod"></i>
+                <h3>容易实现的境外游</h3>
+                <p>猜猜什么时候能实现~</p>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <i class="fab fa-css3"></i>
+                <h3>不易实现的境外游</h3>
+                <p>相信总会有实现的一天</p>
+            </div>
+        </div>
+    </div>
+    <hr class="my-4">
+    <!-- 境内游 -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="jumbotron">
+                    <h1 class="display-3">Hello, world!</h1>
+                    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <hr class="my-4">
+                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <p class="lead">
+                      <a class="btn btn-primary btn-lg" href="domestic.html" role="button">查看更多</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/nanjiang.png">
+                    <div class="card-body">
+                        <h4 class="card-title">南疆</h4>
+                        <p class="card-text">南疆南疆南疆南疆南疆</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/xizang.webp">
+                    <div class="card-body">
+                        <h4 class="card-title">西藏</h4>
+                        <p class="card-text">西藏西藏西藏西藏</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 容易实现的境外游 -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/yinni.png">
+                    <div class="card-body">
+                        <h4 class="card-title">印度尼西亚</h4>
+                        <p class="card-text">印度尼西亚印度尼西亚印度尼西亚</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/aiji.png">
+                    <div class="card-body">
+                        <h4 class="card-title">埃及</h4>
+                        <p class="card-text">埃及埃及埃及埃及</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="jumbotron">
+                    <h1 class="display-3">Hello, world!</h1>
+                    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <hr class="my-4">
+                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <p class="lead">
+                      <a class="btn btn-primary btn-lg" href="abroad_easy" role="button">查看更多</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 不易实现的境外游 -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="jumbotron">
+                    <h1 class="display-3">Hello, world!</h1>
+                    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <hr class="my-4">
+                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <p class="lead">
+                      <a class="btn btn-primary btn-lg" href="abroad_hard" role="button">查看更多</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/dongfei.png">
+                    <div class="card-body">
+                        <h4 class="card-title">东非</h4>
+                        <p class="card-text">东非动物大迁徙</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/nanji.png">
+                    <div class="card-body">
+                        <h4 class="card-title">南极</h4>
+                        <p class="card-text">南极南极南极南极</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="my-4">
+    <!-- 联系 -->
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>联系</h2>
+            </div>
+            <div class="col-12 social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- 尾页 -->
+    <footer>
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>我的足迹</h5>
+                    <hr class="light">
+                    <p>重庆涪陵</p>
+                    <p>更多地方</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>未来计划</h5>
+                    <hr class="light">
+                    <p>国内游</p>
+                    <p>容易实现的境外游</p>
+                    <p>不易实现的境外游</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>联系方式</h5>
+                    <hr class="light">
+                    <p>13228660810</p>
+                    <p>chensiyuexxxx@gmail.com</p>
+                    <p>北京市朝阳区三间房地区定福庄东街1号中国传媒大学</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light">
+                    <h5>  </h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
