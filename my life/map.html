@@ -32,13 +32,10 @@
                         未来计划
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">境内游</a>
-                        <a class="dropdown-item" href="#">容易实现的境外游</a>
-                        <a class="dropdown-item" href="#">不易实现的境外游</a>
+                        <a class="dropdown-item" href="#domestic">境内游</a>
+                        <a class="dropdown-item" href="#abroad_easy">容易版境外游</a>
+                        <a class="dropdown-item" href="#abroad_hard">不易版境外游</a>
                       </div>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">联系</a>
                     </li>
                 </ul>
     </nav>
@@ -55,7 +52,8 @@
                 <h1 class="display-4">关于我</h1>
             </div>
             <div class="col-12">
-                <p class="lead">我是要使地图显示在导航栏之下而不是紧贴在导般上方，您可以通过添加一些样式来调整页面布局。具体步骤如下：在您的 HTML 文件中，为导航栏添加一个类名，比如 "navbar-fixed-top"，以便后续样式调整。</p>
+                <p class="lead">“环游世界”是我从小的梦想，一个这么多年都没变的梦想，为此我也确实一直在路上。
+                    <br>关于我的介绍，这里主要有我的足迹和未来计划，希望这些未来计划之后能在我的足迹里出现。</p>
             </div>
         </div>
     </div>
@@ -63,32 +61,32 @@
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <i class="fas fa-code"></i>
+                <img src="img/火车.png" alt="境内游">
                 <h3>境内游</h3>
-                <p>背上包就出发！</p>
+                <p>背上包就出发</p>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <i class="fas fa-blod"></i>
-                <h3>容易实现的境外游</h3>
+                <img src="img/飞机.png" alt="容易版境外游">
+                <h3>容易版境外游</h3>
                 <p>猜猜什么时候能实现~</p>
             </div>
             <div class="col-sm-12 col-md-4">
-                <i class="fab fa-css3"></i>
-                <h3>不易实现的境外游</h3>
-                <p>相信总会有实现的一天</p>
+                <img src="img/钱.png" alt="困难版境外游">
+                <h3>困难版境外游</h3>
+                <p>相信我总能等到这一天的</p>
             </div>
         </div>
     </div>
     <hr class="my-4">
     <!-- 境内游 -->
-    <div class="container-fluid">
+    <div id="domestic" class="container-fluid">
         <div class="row">
             <div class="col-md-4">
                 <div class="jumbotron">
-                    <h1 class="display-3">Hello, world!</h1>
-                    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <h1 class="display-3">境内游</h1>
+                    <p class="lead">这些是我目前比较感兴趣的境内游<br>祖国真大啊</p>
                     <hr class="my-4">
-                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <p>背上包就出发！他们在不远处等你~</p>
                     <p class="lead">
                       <a class="btn btn-primary btn-lg" href="domestic.html" role="button">查看更多</a>
                     </p>
@@ -115,7 +113,7 @@
         </div>
     </div>
     <!-- 容易实现的境外游 -->
-    <div class="container-fluid">
+    <div id='abroad_easy' class="container-fluid">
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
@@ -137,28 +135,28 @@
             </div>
             <div class="col-md-4">
                 <div class="jumbotron">
-                    <h1 class="display-3">Hello, world!</h1>
-                    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <h1 class="display-3">容易版境外游</h1>
+                    <p class="lead">这些是我目前比较感兴趣的而且或许在不远的将来就能实现的境外游（其实主要就是花钱不多的）</p>
                     <hr class="my-4">
-                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <p>猜猜什么时候能实现~</p>
                     <p class="lead">
-                      <a class="btn btn-primary btn-lg" href="abroad_easy" role="button">查看更多</a>
+                      <a class="btn btn-primary btn-lg" href="abroad_easy.html" role="button">查看更多</a>
                     </p>
                 </div>
             </div>
         </div>
     </div>
     <!-- 不易实现的境外游 -->
-    <div class="container-fluid">
+    <div id='abroad_hard' class="container-fluid">
         <div class="row">
             <div class="col-md-4">
                 <div class="jumbotron">
-                    <h1 class="display-3">Hello, world!</h1>
-                    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                    <h1 class="display-3">困难版境外游</h1>
+                    <p class="lead">这些是我目前比较感兴趣的但确实是很难实现的境外游（谁能送我点钱啊啊啊）</p>
                     <hr class="my-4">
-                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                    <p>相信我总能等到这一天的！</p>
                     <p class="lead">
-                      <a class="btn btn-primary btn-lg" href="abroad_hard" role="button">查看更多</a>
+                      <a class="btn btn-primary btn-lg" href="abroad_hard.html" role="button">查看更多</a>
                     </p>
                 </div>
             </div>
@@ -183,21 +181,6 @@
         </div>
     </div>
     <hr class="my-4">
-    <!-- 联系 -->
-    <div class="container-fluid">
-        <div class="row text-center">
-            <div class="col-12">
-                <h2>联系</h2>
-            </div>
-            <div class="col-12 social">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
     <!-- 尾页 -->
     <footer>
         <div class="container-fluid">
