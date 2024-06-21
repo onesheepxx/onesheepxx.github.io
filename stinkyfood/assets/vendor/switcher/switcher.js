@@ -229,7 +229,7 @@ function addSwitcher()
 	
 	if($("#dzSwitcher-right").length == 0) {
 		jQuery('body').append(dzSwitcher);
-		jQuery('body').append(demoBox);
+		// jQuery('body').append(demoBox);
 	}
 }
 
